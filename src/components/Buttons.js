@@ -5,6 +5,27 @@ import {FontAwesome} from '@expo/vector-icons'
 import glamorous from 'glamorous-native'
 import {color} from '../style/constants'
 
+export class SimpleButton extends React.Component {
+  static propTypes = buttonPropTypes
+  render () {
+    const {icon, title, onPress, ...props} = this.props
+    return (
+      <ButtonEl onPress={onPress} style={{alignSelf: 'flex-start'}} {...props}>
+        <View style={[styles.button, styles.buttonSimple]}>
+          {icon != null && (
+            <FontAwesome
+              name={icon}
+              size={16}
+              style={styles.buttonSimpleIcon}
+            />
+          )}
+          <Text style={styles.buttonSimpleText}>{title}</Text>
+        </View>
+      </ButtonEl>
+    )
+  }
+}
+
 export class PrimaryButton extends React.Component {
   static propTypes = buttonPropTypes
   render () {
@@ -47,26 +68,7 @@ export class SecondaryButton extends React.Component {
   }
 }
 
-export class SimpleButton extends React.Component {
-  static propTypes = buttonPropTypes
-  render () {
-    const {icon, title, onPress, ...props} = this.props
-    return (
-      <ButtonEl onPress={onPress} style={{alignSelf: 'flex-start'}} {...props}>
-        <View style={[styles.button, styles.buttonSimple]}>
-          {icon != null && (
-            <FontAwesome
-              name={icon}
-              size={16}
-              style={styles.buttonSimpleIcon}
-            />
-          )}
-          <Text style={styles.buttonSimpleText}>{title}</Text>
-        </View>
-      </ButtonEl>
-    )
-  }
-}
+
 
 const buttonPropTypes = {
   title: PropTypes.array.isRequired,

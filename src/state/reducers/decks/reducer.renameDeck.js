@@ -1,7 +1,8 @@
 const renameDeck = (state, action) => {
   const {name, newName} = action.payload
-  const deck = {...state[name], title: newName}
   const newState = {...state}
+  
+  const deck = {...state[name], title: newName}
   delete newState[name]
   return {
     ...newState,

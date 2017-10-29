@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {View, FlatList, StyleSheet} from 'react-native'
-import {connect} from 'react-redux'
 import DeckPreview from '../components/DeckPreview'
+
+import {View, FlatList, StyleSheet} from 'react-native'
 import getDecks from '../state/selectors/decks/selector.getDecks'
+import {connect} from 'react-redux'
 import {color} from '../style/constants'
 
 class DeckListScreen extends React.Component {

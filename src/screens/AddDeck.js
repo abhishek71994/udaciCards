@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native'
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
+import {PrimaryButton} from '../components/Buttons'
 import {connect} from 'react-redux'
 import createNewDeck from '../state/actions/decks/action.createNewDeck'
 import getDeckIds from '../state/selectors/decks/selector.getDeckIds'
-import {PrimaryButton} from '../components/Buttons'
 import {color} from '../style/constants'
 
 class AddDeckScreen extends React.Component {
@@ -76,6 +76,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'stretch'
   },
+  
+  errorWrapper: {
+    paddingVertical: 7.5,
+    paddingHorizontal: 15,
+    marginBottom: 20
+  },
   inputWrapper: {
     marginBottom: 20
   },
@@ -91,11 +97,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: color.darkGrey,
     color: color.grey
-  },
-  errorWrapper: {
-    paddingVertical: 7.5,
-    paddingHorizontal: 15,
-    marginBottom: 20
   },
   errorText: {
     fontSize: 18,

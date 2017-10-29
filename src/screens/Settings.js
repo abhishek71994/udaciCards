@@ -19,12 +19,7 @@ class NewCardScreen extends React.Component {
 
   state = {notifications: true}
 
-  componentDidMount () {
-    getNotificationEnabled().then(enabled => {
-      this.setState({notifications: enabled})
-    })
-  }
-
+ 
   deleteAllDecks = () => {
     this.props.deleteAllDecks()
     this.props.navigation.navigate('DeckList')
@@ -33,7 +28,13 @@ class NewCardScreen extends React.Component {
   restoreDefaultDecks = () => {
     this.props.restoreDefaultDecks()
     this.props.navigation.navigate('DeckList')
+  } 
+  componentDidMount () {
+    getNotificationEnabled().then(enabled => {
+      this.setState({notifications: enabled})
+    })
   }
+
 
   handleNotifications = checked => {
     this.setState(

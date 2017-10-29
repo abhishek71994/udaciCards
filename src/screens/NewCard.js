@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native'
+import {PrimaryButton} from '../components/Buttons'
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 import {connect} from 'react-redux'
 import addCardToDeck from '../state/actions/decks/action.addCardToDeck'
-import {PrimaryButton} from '../components/Buttons'
 import {color} from '../style/constants'
 
 class NewCardScreen extends React.Component {

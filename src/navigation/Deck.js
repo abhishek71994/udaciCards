@@ -1,9 +1,9 @@
 import {StackNavigator} from 'react-navigation'
 import {color} from '../style/constants'
 import DeckListScreen from '../screens/DeckList'
+import NewCardScreen from '../screens/NewCard'
 import DeckScreen from '../screens/Deck'
 import RenameDeck from '../screens/RenameDeck'
-import NewCardScreen from '../screens/NewCard'
 import QuizScreen from '../screens/Quiz'
 
 const DeckStackNavigator = StackNavigator(
@@ -14,6 +14,14 @@ const DeckStackNavigator = StackNavigator(
       navigationOptions: () => ({
         title: `All Decks`
       })
+    },
+    NewCard: {
+      screen: NewCardScreen,
+      path: 'decks/:title/new',
+      navigationOptions: () => ({
+        title: `New Card`
+      }),
+      mode: 'modal'
     },
     Deck: {
       screen: DeckScreen,
@@ -28,14 +36,6 @@ const DeckStackNavigator = StackNavigator(
       navigationOptions: ({navigation}) => ({
         title: `Rename`
       })
-    },
-    NewCard: {
-      screen: NewCardScreen,
-      path: 'decks/:title/new',
-      navigationOptions: () => ({
-        title: `New Card`
-      }),
-      mode: 'modal'
     },
     Quiz: {
       screen: QuizScreen,

@@ -6,9 +6,9 @@
     "description": "Flashcards",
     "slug": "udacicards",
     "version": "0.2.0",
-    "icon": "https://i.imgur.com/Zkq188H.png",
+    "icon": "",
     "notification": {
-      "icon": "https://i.imgur.com/RveFDUh.png"
+      "icon": ""
     },
     "ios": {
       "bundleIdentifier": "org.udacicards.exp"

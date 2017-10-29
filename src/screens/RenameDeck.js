@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native'
+import renameDeck from '../state/actions/decks/action.renameDeck'
 import {NavigationActions} from 'react-navigation'
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 import {connect} from 'react-redux'
-import renameDeck from '../state/actions/decks/action.renameDeck'
 import getDeckIds from '../state/selectors/decks/selector.getDeckIds'
 import {PrimaryButton} from '../components/Buttons'
 import {color} from '../style/constants'
@@ -14,9 +14,7 @@ class AddDeckScreen extends React.Component {
     navigation: PropTypes.object.isRequired
   }
 
-  componentWillMount () {
-    this.setState({name: this.props.navigation.state.params.title})
-  }
+  
 
   state = {name: ''}
 
@@ -39,6 +37,9 @@ class AddDeckScreen extends React.Component {
         })
       )
     })
+  }
+  componentWillMount () {
+    this.setState({name: this.props.navigation.state.params.title})
   }
 
   render () {

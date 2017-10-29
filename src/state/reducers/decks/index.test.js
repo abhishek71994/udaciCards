@@ -21,6 +21,12 @@ describe('Deck reducer', () => {
     expect(result).toMatchSnapshot()
   })
 
+  test('deleteAllDecks', () => {
+    const state = deepFreeze({...initialState})
+    const result = decks(state, {type: DELETE_ALL_DECKS})
+    expect(result).toMatchSnapshot()
+  })
+
   test('renameDeck', () => {
     const state = deepFreeze({...initialState})
     const result = decks(state, {
@@ -36,12 +42,6 @@ describe('Deck reducer', () => {
       type: DELETE_DECK,
       payload: {name: 'React'}
     })
-    expect(result).toMatchSnapshot()
-  })
-
-  test('deleteAllDecks', () => {
-    const state = deepFreeze({...initialState})
-    const result = decks(state, {type: DELETE_ALL_DECKS})
     expect(result).toMatchSnapshot()
   })
 

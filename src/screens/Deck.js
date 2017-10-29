@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Text, View, StyleSheet} from 'react-native'
+import deleteDeck from '../state/actions/decks/action.deleteAllDecks'
+import getDeck from '../state/selectors/decks/selector.getDeck'
 import {connect} from 'react-redux'
 import {
   PrimaryButton,
   SecondaryButton,
   SimpleButton
 } from '../components/Buttons'
-import deleteDeck from '../state/actions/decks/action.deleteAllDecks'
-import getDeck from '../state/selectors/decks/selector.getDeck'
 import {color} from '../style/constants'
 
 class DeckScreen extends React.Component {
@@ -29,18 +29,18 @@ class DeckScreen extends React.Component {
     }
   }
 
+  deleteDeck = () => {
+    const {title} = this.props.deck
+    this.props.deleteDeck({name: title})
+    this.props.navigation.goBack()
+  }
+
   componentDidMount () {
     this.props.navigation.setParams({deleteDeck: this.deleteDeck})
   }
 
   renameDeck = () => {
     this.props.navigation.navigate('RenameDeck', {title: this.props.deck.title})
-  }
-
-  deleteDeck = () => {
-    const {title} = this.props.deck
-    this.props.deleteDeck({name: title})
-    this.props.navigation.goBack()
   }
 
   render () {

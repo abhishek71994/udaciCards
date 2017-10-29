@@ -27,6 +27,15 @@ const IndexSection = TabNavigator(
           <FontAwesome name='clone' size={30} color={tintColor} />
         )
       }
+    },
+    Settings:{
+      screen: SettingsScreen,
+      navigationOptions:{
+        title:'Settings',
+        tabBarLabel:'Settings',
+        tabBarIcon: ({tintColor})=>(
+          <FontAwesome name='cogs' size={30} color={tintColor} />)
+      }
     }
   },
   {

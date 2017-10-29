@@ -21,17 +21,6 @@ class QuizScreen extends React.Component {
 
   state = {...defaultState}
 
-  showAnswer = () => {
-    this.setState({side: 'back'})
-  }
-
-  markCorrect = () => {
-    this.setState(
-      state => ({correctAnswers: state.correctAnswers + 1}),
-      () => this.next()
-    )
-  }
-
   next = () => {
     const {questions} = this.props
     const nextCardIndex = this.state.currentCardIndex + 1
@@ -42,6 +31,17 @@ class QuizScreen extends React.Component {
         updateLocalNotificationWithNewQuiz()
       )
     }
+  }
+
+  showAnswer = () => {
+    this.setState({side: 'back'})
+  }
+
+  markCorrect = () => {
+    this.setState(
+      state => ({correctAnswers: state.correctAnswers + 1}),
+      () => this.next()
+    )
   }
 
   restart = () => {

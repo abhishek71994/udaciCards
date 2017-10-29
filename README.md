@@ -2,11 +2,12 @@
 ## Udacity React Nanodegree Project 3
 
 
-## Development usage
+## Installation guide
 
 ```
-yarn          # install dependencies
-yarn start    # run app in development
+cd udaciCards	   # go into the udaciCards directory
+npm install        # install dependencies
+yarn start		   # run app in development
 ```
 
 ## create-react-native-app
